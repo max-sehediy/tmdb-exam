@@ -1,0 +1,413 @@
+[
+  {
+    "page": 1,
+    "results": [
+      {
+        "adult": false,
+        "backdrop_path": "/jlGmlFOcfo8n5tURmhC7YVd4Iyy.jpg",
+        "genre_ids": [
+          28,
+          12,
+          14,
+          35
+        ],
+        "id": 436969,
+        "original_language": "en",
+        "original_title": "The Suicide Squad",
+        "overview": "Есть на земле одно гнилое место, откуда мечтают свалить даже самые отъявленные злодеи. Тюрьма Белль Рив — для преступников со сверхспособностями. Она же — ад. Она же — база рекрутов для суперсекретного проекта «Отряд самоубийц».",
+        "popularity": 4013.503,
+        "poster_path": "/fgBqiYyRB3RaOT7e117sw30qVRr.jpg",
+        "release_date": "2021-07-28",
+        "title": "Отряд самоубийц: Миссия навылет",
+        "video": false,
+        "vote_average": 8,
+        "vote_count": 2969
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/swcF9sPlruc6s4gAHuWfbYicbqG.jpg",
+        "genre_ids": [
+          16,
+          10751,
+          12,
+          35
+        ],
+        "id": 675445,
+        "original_language": "en",
+        "original_title": "PAW Patrol: The Movie",
+        "overview": "Когда злодей Хамдингер становится мэром города Приключений, бесстрашные щенки бросают ему вызов. Райдера с друзьями ждут опасности и веселье, тайны прошлого и новые знакомства — так, к патрулю присоединяется находчивая такса Либерти. Вооружившись новыми гаджетами, смекалкой и дружбой, команда хвостатых героев готова противостоять Хамдингеру и спасти жителей города Приключений.",
+        "popularity": 3574.462,
+        "poster_path": "/yoIw8l9XO4btmHtg73b7ttzknJW.jpg",
+        "release_date": "2021-08-09",
+        "title": "Щенячий патруль в кино",
+        "video": false,
+        "vote_average": 7.8,
+        "vote_count": 164
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/7WJjFviFBffEJvkAms4uWwbcVUk.jpg",
+        "genre_ids": [
+          12,
+          14,
+          35,
+          28
+        ],
+        "id": 451048,
+        "original_language": "en",
+        "original_title": "Jungle Cruise",
+        "overview": "Отважная исследовательница дикой природы Лили Хоутон намерена отправиться в верховья Амазонки, чтобы найти легендарное дерево, которое – согласно преданиям южноамериканских индейских племен – обладает магическими целебными свойствами. Сопровождать Лили будут её утонченный брат Макгрегор и бесшабашный капитан круизного пароходика Фрэнк. В дебрях джунглей путников будут подстерегать не только смертельно опасные представители амазонской флоры и фауны, но и ловушки, подстроенные участниками конкурирующей экспедиции, и даже встречи со сверхъестественным.",
+        "popularity": 3406.403,
+        "poster_path": "/t6PpKQfjQmotvC9b2YeNTaTwMd.jpg",
+        "release_date": "2021-07-28",
+        "title": "Круиз по джунглям",
+        "video": false,
+        "vote_average": 7.9,
+        "vote_count": 2063
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/uHmvk8FnoxpgujDU0RIXLkv2fNt.jpg",
+        "genre_ids": [
+          16,
+          35
+        ],
+        "id": 573164,
+        "original_language": "es",
+        "original_title": "Un rescate de huevitos",
+        "overview": "",
+        "popularity": 2402.906,
+        "poster_path": "/lq68Z5htr1bjPd8X0U3PBZRcUij.jpg",
+        "release_date": "2021-08-12",
+        "title": "Un rescate de huevitos",
+        "video": false,
+        "vote_average": 8.1,
+        "vote_count": 140
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/AjQgFtfXTmmMVuaH2VfQDdGbeQH.jpg",
+        "genre_ids": [
+          28,
+          18,
+          80
+        ],
+        "id": 706972,
+        "original_language": "en",
+        "original_title": "Narco Sub",
+        "overview": "Возрождение карибских нарко-маршрутов приводит к власти пару в стиле Бонни и Клайда.",
+        "popularity": 2281.463,
+        "poster_path": "/7p0O4mKYLIhU2E5Zcq9Z3vOZ4e9.jpg",
+        "release_date": "2021-07-22",
+        "title": "Война наркокартелей",
+        "video": false,
+        "vote_average": 3.2,
+        "vote_count": 10
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/dq18nCTTLpy9PmtzZI6Y2yAgdw5.jpg",
+        "genre_ids": [
+          28,
+          12,
+          53,
+          878
+        ],
+        "id": 497698,
+        "original_language": "en",
+        "original_title": "Black Widow",
+        "overview": "Наташе Романофф предстоит лицом к лицу встретиться со своим прошлым. Чёрной Вдове придется вспомнить о том, что было в её жизни задолго до присоединения к команде Мстителей, и узнать об опасном заговоре, в который оказываются втянуты её старые знакомые — Елена, Алексей (известный как Красный Страж) и Мелина.",
+        "popularity": 1917.443,
+        "poster_path": "/mbtN6V6y5kdawvAkzqN4ohi576a.jpg",
+        "release_date": "2021-07-07",
+        "title": "Чёрная вдова",
+        "video": false,
+        "vote_average": 7.8,
+        "vote_count": 4481
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/8s4h9friP6Ci3adRGahHARVd76E.jpg",
+        "genre_ids": [
+          16,
+          35,
+          10751,
+          878
+        ],
+        "id": 379686,
+        "original_language": "en",
+        "original_title": "Space Jam: A New Legacy",
+        "overview": "Чтобы спасти сына, знаменитый чемпион НБА отправляется в сказочный мир, где в команде мультяшек вынужден сражаться на баскетбольной площадке с цифровыми копиями знаменитых игроков.",
+        "popularity": 1876.991,
+        "poster_path": "/jp03RHaZqd264DZBqLfooPDnlBE.jpg",
+        "release_date": "2021-07-08",
+        "title": "Космический джем: Новое поколение",
+        "video": false,
+        "vote_average": 7.5,
+        "vote_count": 1923
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/lzLzKXq2C0kL5Pu7VW5sNl5KV6L.jpg",
+        "genre_ids": [
+          12,
+          53,
+          18,
+          28
+        ],
+        "id": 597433,
+        "original_language": "en",
+        "original_title": "Beckett",
+        "overview": "Находясь на отдыхе в Греции вместе со своей девушкой, американский турист Беккет попадает в автокатастрофу, после чего оказывается в бегах от пытающейся его убить полиции, замешанной в непонятном политическом заговоре. Всё, что ему нужно — добраться до посольства и понять, что случилось с его девушкой, пропавшей после аварии.",
+        "popularity": 1715.514,
+        "poster_path": "/zcJzowAOK0wUEFhfdpi97g4fbEM.jpg",
+        "release_date": "2021-08-04",
+        "title": "Беккет",
+        "video": false,
+        "vote_average": 6.2,
+        "vote_count": 204
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/j28p5VwI5ieZnNwfeuZ5Ve3mPsn.jpg",
+        "genre_ids": [
+          35,
+          28,
+          12,
+          878
+        ],
+        "id": 550988,
+        "original_language": "en",
+        "original_title": "Free Guy",
+        "overview": "У сотрудника крупного банка всё идёт по накатанной, пока однажды он не выясняет, что окружающий его мир — это часть огромной видеоигры, а сам он в ней — всего лишь второстепенный персонаж. Хватит ли у него духу переписать свой код, обратить на себя внимание прекрасной девушки и, наконец, спасти мир? Одним словом, получится ли из него главный герой?",
+        "popularity": 1700.206,
+        "poster_path": "/21M3oZXEuWzO2lURpbLvulxDxaK.jpg",
+        "release_date": "2021-08-11",
+        "title": "Главный герой",
+        "video": false,
+        "vote_average": 7.8,
+        "vote_count": 392
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/xXHZeb1yhJvnSHPzZDqee0zfMb6.jpg",
+        "genre_ids": [
+          28,
+          80,
+          53
+        ],
+        "id": 385128,
+        "original_language": "en",
+        "original_title": "F9",
+        "overview": "Времена меняются: Доминик Торетто залегает на дно и живет спокойной жизнью с семьей. Но судьба имеет на него другие планы.",
+        "popularity": 1610.64,
+        "poster_path": "/mfccq2gRX7xDwzRxjrW6mUQSzD8.jpg",
+        "release_date": "2021-05-19",
+        "title": "Форсаж 9",
+        "video": false,
+        "vote_average": 7.6,
+        "vote_count": 3098
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/wjQXZTlFM3PVEUmKf1sUajjygqT.jpg",
+        "genre_ids": [
+          878,
+          28,
+          53
+        ],
+        "id": 581726,
+        "original_language": "en",
+        "original_title": "Infinite",
+        "overview": "С самого детства Эван страдает от странных видений и реалистичных снов, знает вещи, которые никогда не запоминал, и имеет непонятно откуда взявшиеся навыки. С диагнозом «шизофрения» он влачит жалкое существование и зависит от таблеток. Пытаясь раздобыть очередную партию, Эван вздорит с дилером, устраивает заварушку и попадает в полицию. А там на него выходит загадочный мужчина, который утверждает, что знает его очень давно — ещё со Второй Пунической войны.",
+        "popularity": 1493.933,
+        "poster_path": "/1h0XbvscYPOx2S1KksPI0JfP2Zu.jpg",
+        "release_date": "2021-06-10",
+        "title": "Бесконечность",
+        "video": false,
+        "vote_average": 7.4,
+        "vote_count": 826
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/yizL4cEKsVvl17Wc1mGEIrQtM2F.jpg",
+        "genre_ids": [
+          28,
+          878,
+          12
+        ],
+        "id": 588228,
+        "original_language": "en",
+        "original_title": "The Tomorrow War",
+        "overview": "В будущем идёт разрушительный конфликт с инопланетной расой. В попытке переломить ход войны учёные начинают призывать в свою армию солдат из прошлого.",
+        "popularity": 1461.785,
+        "poster_path": "/jdzuxuA05lW4DzedZqa43SYhaZ.jpg",
+        "release_date": "2021-06-30",
+        "title": "Война будущего",
+        "video": false,
+        "vote_average": 8.2,
+        "vote_count": 3618
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/gX5UrH1TLVVBwI7WxplW43BD6Z1.jpg",
+        "genre_ids": [
+          16,
+          35,
+          12,
+          10751
+        ],
+        "id": 459151,
+        "original_language": "en",
+        "original_title": "The Boss Baby: Family Business",
+        "overview": "Братья Тим и Тед давно повзрослели и отдалились друг от друга. Тед стал генеральным директором инвестиционного фонда, а Тим посвятил себя семье. Он женился, поселился в пригороде и обзавелся двумя прекрасными дочерьми — Тиной и Табитой. 7-летняя Табита — умная и очень усердная. Несмотря на свой юный возраст, она уже лучшая в классе, а малышка Тина на самом деле оказывается агентом компании BabyCorp. Узнав, что злой гений доктор Эрвин Армстронг выращивает целую армию злобных малышей, Тина с помощью своего папы и дяди решает противостоять ему.",
+        "popularity": 1355.6,
+        "poster_path": "/ocrIFz6a2Bquo7Zj7b3c9CWMnYk.jpg",
+        "release_date": "2021-07-01",
+        "title": "Босс-молокосос 2",
+        "video": false,
+        "vote_average": 7.8,
+        "vote_count": 1240
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/rUoGZuscSG4fQP3I56ndadu2A8E.jpg",
+        "genre_ids": [
+          28,
+          35
+        ],
+        "id": 729720,
+        "original_language": "fr",
+        "original_title": "Le Dernier Mercenaire",
+        "overview": "Осуждённый тайный агент вынужден вернуться во Францию, чтобы спасти своего сына, которого подставила международная террористическая организация.",
+        "popularity": 1319.109,
+        "poster_path": "/sNfEiOU2QOACkdcUBKRzhFcIYTN.jpg",
+        "release_date": "2021-07-30",
+        "title": "Последний наёмник",
+        "video": false,
+        "vote_average": 6.9,
+        "vote_count": 291
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/620hnMVLu6RSZW6a5rwO8gqpt0t.jpg",
+        "genre_ids": [
+          16,
+          35,
+          10751,
+          14
+        ],
+        "id": 508943,
+        "original_language": "en",
+        "original_title": "Luca",
+        "overview": "Свои незабываемые каникулы, в которых есть место и домашней пасте, и мороженному, и бесконечным поездкам на мопеде, мальчик по имени Лука проводит в красивом приморском городке, расположенном на итальянской Ривьере. Ни одно приключение Луки не обходится без участия его нового лучшего друга, и беззаботность отдыха омрачает только лишь тот факт, что на самом деле в облике мальчика скрывается морской монстр из глубин лагуны, на берегу которой стоит городок.",
+        "popularity": 1308.514,
+        "poster_path": "/99wTOb5v97nVPnuCR9E9JtPeVzU.jpg",
+        "release_date": "2021-06-17",
+        "title": "Лука",
+        "video": false,
+        "vote_average": 8.1,
+        "vote_count": 4104
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/6tPOZmNQ1tbzlhcMmyhYN1a1dEh.jpg",
+        "genre_ids": [
+          28,
+          53
+        ],
+        "id": 809968,
+        "original_language": "pl",
+        "original_title": "Bartkowiak",
+        "overview": "Фильм рассказывает о бывшем спортсмене-мастере боевых искусств, который после смерти близкого человека вынужден вернуться на ринг. Чтобы заново устроить свою жизнь, молодому человеку придется столкнуться с преступным миром…",
+        "popularity": 1026.446,
+        "poster_path": "/kOVko9u2CSwpU8zGj14Pzei6Eco.jpg",
+        "release_date": "2021-07-28",
+        "title": "Бартковяк",
+        "video": false,
+        "vote_average": 5.9,
+        "vote_count": 85
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/8yhWlFcJ8zCqjfCvLy3lWFuawR1.jpg",
+        "genre_ids": [
+          878,
+          9648,
+          10749
+        ],
+        "id": 579047,
+        "original_language": "en",
+        "original_title": "Reminiscence",
+        "overview": "Недалёкое будущее, Майами почти полностью ушёл под воду из-за глобального потепления. Частный детектив Ник Баннистер с помощью специальной технологии выискивает в человеческой памяти нужные моменты, чтобы заказчик мог заново пережить прошлое и вспомнить что-то важное. Однажды на пороге его офиса появляется клиентка с простой просьбой: она забыла, где оставила ключи. Обычная сессия превращается в полноценный роман, пока в один день женщина не исчезает без следа.",
+        "popularity": 1011.51,
+        "poster_path": "/kuyx34TSmFV2ULiHgyN85vqpN9b.jpg",
+        "release_date": "2021-08-19",
+        "title": "Воспоминания",
+        "video": false,
+        "vote_average": 7.5,
+        "vote_count": 291
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/wPjtacig0kIkVcTQmXoNt6jbMwo.jpg",
+        "genre_ids": [
+          28,
+          35
+        ],
+        "id": 617502,
+        "original_language": "en",
+        "original_title": "Jolt",
+        "overview": "Никогда не злите Линди! Она сногсшибательная красотка, но её ярости позавидует любой вышибала. Чтобы гасить вспышки гнева, она носит на себе оригинальное приспособление — жилет из электродов, бьющих ее током за мгновение до срыва. Но когда кто-то убивает ее парня, Линди понимает, что только ей под силу раскрыть преступление. Теперь у нее есть веский повод пуститься во все тяжкие и надрать задницы всему преступному миру в поисках виновных.",
+        "popularity": 1009.379,
+        "poster_path": "/sgl3Mlw1LHrXX7HYEHUe43nuTRS.jpg",
+        "release_date": "2021-07-15",
+        "title": "Красотка на взводе",
+        "video": false,
+        "vote_average": 6.8,
+        "vote_count": 556
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/tehpKMsls621GT9WUQie2Ft6LmP.jpg",
+        "genre_ids": [
+          27,
+          28,
+          53
+        ],
+        "id": 602223,
+        "original_language": "en",
+        "original_title": "The Forever Purge",
+        "overview": "Этим летом все правила будут нарушены. Группа мародеров решает, что ежегодная Судная ночь не должна заканчиваться с наступлением утра, а может продолжаться бесконечно. Никто больше не будет в безопасности.",
+        "popularity": 1000.124,
+        "poster_path": "/nbNZ9cUdI07772CUV5tYGMTWv2p.jpg",
+        "release_date": "2021-06-30",
+        "title": "Судная ночь навсегда",
+        "video": false,
+        "vote_average": 7.5,
+        "vote_count": 1058
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/pUc51UUQb1lMLVVkDCaZVsCo37U.jpg",
+        "genre_ids": [
+          53,
+          27
+        ],
+        "id": 482373,
+        "original_language": "en",
+        "original_title": "Don't Breathe 2",
+        "overview": "Спустя несколько лет после кровавого вторжения Норман обрел покой и утешение, но оказалось, что от прошлых грехов так просто не убежишь.",
+        "popularity": 982.894,
+        "poster_path": "/6GJK0SnH5w3eX6gQRPTKio85GnU.jpg",
+        "release_date": "2021-08-12",
+        "title": "Не дыши 2",
+        "video": false,
+        "vote_average": 7.3,
+        "vote_count": 67
+      }
+    ],
+    "total_pages": 500,
+    "total_results": 10000
+  }
+]
