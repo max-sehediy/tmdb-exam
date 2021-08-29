@@ -11,12 +11,17 @@ import {
 import React from "react";
 import { imagePath } from "../../../http";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     width: 150,
-    height: 350,
+    height: 360,
+    padding:theme.spacing(2),
+    margin:theme.spacing(2)
   },
-});
+  rating:{
+    color:theme.palette.warning.dark
+  }
+}));
 
 const Item = ({ data }) => {
   const classes = useStyles();
@@ -33,20 +38,17 @@ const Item = ({ data }) => {
             title="Contemplative Reptile"
           />
           <CardContent>
-            <Typography gutterBottom variant="body">
+            <Typography gutterBottom variant="body" color='primary'>
               {data.title}
             </Typography>
-            <Typography variant="body2" color="textSecondary">
-              {data.vote_average}
+            <Typography variant="body2" className={classes.rating}>
+              Rating: {data.vote_average}
             </Typography>
           </CardContent>
         </CardActionArea>
         <CardActions>
           <Button size="small" color="primary">
-            Share
-          </Button>
-          <Button size="small" color="secondary">
-            Learn More
+            Add to Favorite
           </Button>
         </CardActions>
       </Card>
