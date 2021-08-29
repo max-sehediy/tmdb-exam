@@ -29,8 +29,8 @@ const ListItems = () => {
   return (
     <div>
       {loading ? (
-        <Grid container alignItems="center" style={{ margin: "0 20px" }}>
-          {Array.from(new Array(4)).map((el) => (
+        <Grid container alignItems="center" justifyContent="center" style={{ margin: "0 20px" }}>
+          {Array.from(new Array(6)).map((el) => (
             <Grid
               container
               item
@@ -55,13 +55,13 @@ const ListItems = () => {
         <Grid
           container
           alignItems="center"
-          // justifyContent="center"
+          justifyContent="center"
           
           className={classes.listMovie}
         >
           {listMovie
             ? listMovie.results?.map((el) => (
-                <Item md={4} key={el.id} data={el} spacing={4} />
+                <Item md={4} key={el.id} data={el} spacing={1} />
               ))
             : "Oops"}
         </Grid>
