@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import cardReducer from './card/cardStore'
 import listsReducer from "./lists/lists";
+import movieReducer  from "./movieItem/movieItem";
 export const store = configureStore({
   reducer: {
-    card: cardReducer,
+    movieItem: movieReducer,
     listMovie: listsReducer
   },
 })
