@@ -1,9 +1,9 @@
 import { createTheme } from "@material-ui/core";
-import { cyan, teal } from "@material-ui/core/colors";
+import { cyan, purple } from "@material-ui/core/colors";
 
 const theme = createTheme({
   palette: {
-    primary: teal,
+    primary: purple,
     secondary: cyan,
     info: {
       light: '#64b5f6',
@@ -12,5 +12,8 @@ const theme = createTheme({
       contrastText: '#fff',
     },
   },
+  typography: {
+    fontFamily: ['Source Sans Pro', 'sans-serif'],
+  }
 })
 export default theme
