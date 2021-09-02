@@ -12,25 +12,35 @@ import Item from "./item/Item";
 
 const useStyles = makeStyles((theme) => ({
   listMovie: {
-    padding: theme.spacing(4),
-    height:'500px',
-    overflow:'scroll'
+    padding: theme.spacing(2),
+    height: "500px",
+    [theme.breakpoints.down("md")]: {
+      height: "auto",
+    },
+    overflow: "scroll",
   },
 }));
 
 const ListItems = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const { listMovie, loading, err } = useSelector((state) => state.listMovie);
+  const { listMovie, loading } = useSelector((state) => state.listMovie);
   useEffect(() => {
-    dispatch(fetchPopularMovie());
+    function load() {
+      return dispatch(fetchPopularMovie());
+    }
+    load();
   }, []);
-  console.log(listMovie);
   return (
     <div>
       {loading ? (
-        <Grid container alignItems="center" style={{ margin: "0 20px" }}>
-          {Array.from(new Array(4)).map((el) => (
+        <Grid
+          container
+          alignItems="center"
+          justifyContent="center"
+          style={{ margin: "0 20px" }}
+        >
+          {Array.from(new Array(6)).map((el,index) => (
             <Grid
               container
               item
@@ -38,7 +48,7 @@ const ListItems = () => {
               md={4}
               spacing={3}
               alignItems="center"
-              justifyContent="start"
+              key={index}
             >
               <Skeleton
                 animation="wave"
@@ -54,14 +64,17 @@ const ListItems = () => {
       ) : (
         <Grid
           container
-          alignItems="center"
-          // justifyContent="center"
-          
+          direction="row"
+          justifyContent="center"
+          alignItems="stretch"
+          spacing={3}
           className={classes.listMovie}
         >
           {listMovie
             ? listMovie.results?.map((el) => (
-                <Item md={4} key={el.id} data={el} spacing={4} />
+                <Grid item key={el.id} xs={12} md={3}>
+                  <Item data={el} />
+                </Grid>
               ))
             : "Oops"}
         </Grid>
