@@ -114,7 +114,7 @@ const Movie = ({ movieItem, altMovies }) => {
             sm={12}
             md={8}
             style={{ paddingLeft: "40px" }}
-            lassName={classes.mainDesc}
+            className={classes.mainDesc}
           >
             <Box display="flex" flexDirection="column">
               <Typography variant="h6" className={classes.title}>
