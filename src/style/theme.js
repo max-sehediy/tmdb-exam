@@ -12,8 +12,6 @@ const theme = createTheme({
       contrastText: '#fff',
     },
   },
-  typography: {
-    fontFamily: ['Source Sans Pro', 'sans-serif'],
-  }
+ 
 })
 export default theme

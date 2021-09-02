@@ -30,13 +30,13 @@ const initialState = {
   },
 
   loading: true,
-  err: ' ',
+  err: '',
   // Alternative Movies
   altMovies: {
-    result:[]
+    result: []
   },
   altLoading: true,
-  altErr: ' '
+  altErr: ''
 }
 export const movieSlice = createSlice({
   name: 'movie',
