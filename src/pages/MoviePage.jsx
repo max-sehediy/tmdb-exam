@@ -12,15 +12,22 @@ const MoviePage = () => {
   const { id } = useParams();
   const history = useHistory();
   const dispatch = useDispatch();
-  const { loading, altLoading, movieItem, altMovies } = useSelector(
-    (state) => state.movieItem
-  );
+  const { loading, altLoading, movieItem, altMovies, err, altErr } =
+    useSelector((state) => state.movieItem);
   useEffect(() => {
     dispatch(fetchMovieById(id));
     dispatch(fetchAlternativeMoviesById(id));
   }, [id]);
   if (loading || altLoading) {
     return <h1>loading</h1>;
+  }
+  if (err.length || altErr.length) {
+    return (
+      <div style={{padding:50}}>
+        <h3>Error movie: {err}</h3>
+        {altErr ? <h3 style={{marginTop:20}}>Error alt movies: <strong style={{color:'red'}}>{altErr}</strong></h3> : null}
+      </div>
+    );
   }
   return <Movie movieItem={movieItem} altMovies={altMovies} />;
 };
