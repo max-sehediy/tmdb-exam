@@ -7,7 +7,9 @@ import {
 } from "@material-ui/core";
 import { FiberManualRecord } from "@material-ui/icons";
 import React from "react";
+import { useHistory } from "react-router";
 import { imagePath } from "../http";
+import { MOVIE_PAGE } from "../utils/constans";
 const useStyles = makeStyles((theme) => ({
   poster: {
     position: "relative",
@@ -68,12 +70,14 @@ const useStyles = makeStyles((theme) => ({
   altMoviesPost: {
     position: "relative",
     margin: theme.spacing(1),
+    cursor:'pointer',
     "&>img": {
       borderRadius: "10px",
       height: "150px",
     },
   },
   altMoviesFooter: {
+    cursor:'pointer',
     position: "absolute",
     color: "black",
     width: "90%",
@@ -93,6 +97,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Movie = ({ movieItem, altMovies }) => {
   const classes = useStyles();
+  const history = useHistory();
   const year = new Date(movieItem?.release_date);
 
   return (
@@ -172,6 +177,7 @@ const Movie = ({ movieItem, altMovies }) => {
                   display="flex"
                   key={el.id}
                   className={classes.altMoviesPost}
+                  onClick={() => history.push(MOVIE_PAGE + "/" + el.id)}
                 >
                   <img src={imagePath + el.backdrop_path} alt="" />
                   <Box display="flex" className={classes.altMoviesFooter}>

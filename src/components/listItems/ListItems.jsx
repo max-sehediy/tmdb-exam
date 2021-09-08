@@ -7,13 +7,13 @@ import { Skeleton } from "@material-ui/lab";
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPopularMovie } from "../../store/lists/lists";
+import { fetchGenreMovies, fetchPopularMovie } from "../../store/lists/lists";
 import Item from "./item/Item";
 
 const useStyles = makeStyles((theme) => ({
   listMovie: {
     padding: theme.spacing(2),
-    height: "500px",
+    height: "100vh",
     [theme.breakpoints.down("md")]: {
       height: "auto",
     },
@@ -25,12 +25,15 @@ const ListItems = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const { listMovie, loading } = useSelector((state) => state.listMovie);
+  const { genres, selectedGenres } = useSelector((state) => state.genres);
   useEffect(() => {
-    function load() {
-      return dispatch(fetchPopularMovie());
-    }
-    load();
+    return dispatch(fetchPopularMovie());
   }, []);
+  useEffect(() => {
+    if (selectedGenres.length) {
+      dispatch(fetchGenreMovies(selectedGenres));
+    }
+  }, [selectedGenres]);
   return (
     <div>
       {loading ? (
@@ -40,7 +43,7 @@ const ListItems = () => {
           justifyContent="center"
           style={{ margin: "0 20px" }}
         >
-          {Array.from(new Array(6)).map((el,index) => (
+          {Array.from(new Array(6)).map((el, index) => (
             <Grid
               container
               item
