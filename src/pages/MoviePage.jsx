@@ -10,7 +10,6 @@ import {
 
 const MoviePage = () => {
   const { id } = useParams();
-  const history = useHistory();
   const dispatch = useDispatch();
   const { loading, altLoading, movieItem, altMovies, err, altErr } =
     useSelector((state) => state.movieItem);
@@ -29,7 +28,7 @@ const MoviePage = () => {
       </div>
     );
   }
-  return <Movie movieItem={movieItem} altMovies={altMovies} />;
+  return <Movie movieItem={movieItem} altMovies={altMovies}  />;
 };
 
 export default MoviePage;

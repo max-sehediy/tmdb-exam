@@ -1,13 +1,30 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+import { useFetching } from "../../hooks/useFetching"
 import { $host } from "../../http/axios"
 
 export const fetchPopularMovie = createAsyncThunk(
   'lists/fetchPopularMovie',
   async () => {
-    const response = await $host.get(`popular?&page=1`)
-    return response.data
+    const data = await useFetching()
+    return data
   }
 )
+export const fetchGenreMovies = createAsyncThunk(
+  'lists/fetchGenreMovies',
+  async (genre) => {
+    let genres = genre.map(el => el.id).join(',')
+    // const data = await useFetching()
+    const { data } = await $host.get('discover/movie',
+      {
+        params: {
+          sort_by: 'popularity.desc',
+          page: 1,
+          with_genres: genres,
+        }
+      }
+    )
+    return data
+  })
 
 const initialState = {
   listMovie: null,
@@ -20,6 +37,7 @@ export const listsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
+    //! popular list
     [fetchPopularMovie.pending]: (state) => { state.loading = true },
     [fetchPopularMovie.fulfilled]: (state, action) => {
       state.listMovie = action.payload
@@ -29,6 +47,16 @@ export const listsSlice = createSlice({
       state.loading = false
       state.err = action.error.message
     },
+    //! genres list
+    [fetchGenreMovies.pending]: (state) => { state.loading = true },
+    [fetchGenreMovies.fulfilled]: (state, action) => {
+      state.loading = false
+      state.listMovie = action.payload
+    },
+    [fetchGenreMovies.rejected]: (state, action) => {
+      state.loading = false
+      state.err = action.payload
+    }
   }
 })
 
