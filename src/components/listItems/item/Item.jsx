@@ -11,21 +11,18 @@ import {
 import HighlightOffOutlinedIcon from "@material-ui/icons/HighlightOffOutlined";
 import FavoriteOutlinedIcon from "@material-ui/icons/FavoriteOutlined";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { imagePath } from "../../../http";
 import { MOVIE_PAGE } from "../../../utils/constans";
+import { addToFavMovies, removeFromFavMovies } from "../../../store/currentUser/currentUser";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: theme.spacing(1),
     height: "100%",
     position: "relative",
-    // margin: theme.spacing(2),
   },
   img: {
-    // minHeight: 360,
-    objectFit: "contain",
   },
   rating: {
     color: theme.palette.warning.dark,
@@ -35,15 +32,24 @@ const useStyles = makeStyles((theme) => ({
     top: 3,
     right: 3,
   },
+  iconRemove:{
+    color:theme.palette.error.main
+  }
 }));
 
 const Item = ({ data }) => {
   const classes = useStyles();
   const history = useHistory();
+  const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.currentUser);
-  const handleClick = () => {
-    console.log(currentUser?.favorites);
+console.log(currentUser.favorites)
+  const handleClickAdd = (id) => {
+    return dispatch(addToFavMovies(id));
   };
+  const handleClickRemove = (id) => {
+    return dispatch(removeFromFavMovies(id));
+  };
+
   return (
     <Card className={classes.root}>
       <CardActionArea>
@@ -69,19 +75,22 @@ const Item = ({ data }) => {
         <Fab
           aria-label="like"
           className={classes.favBtn}
-          onClick={handleClick}
-          color="secondary"
+          onClick={() => handleClickRemove(data.id)}
+          // color="secondary"
+          size='small'
         >
-          <HighlightOffOutlinedIcon color="primary" />
+          <HighlightOffOutlinedIcon className={classes.iconRemove} />
         </Fab>
       ) : (
         <Fab
           aria-label="like"
           className={classes.favBtn}
-          onClick={handleClick}
-          color="secondary"
+          onClick={() => handleClickAdd(data.id)}
+          size='small'
+
+          // color="secondary"
         >
-          <FavoriteOutlinedIcon color="primary" />
+          <FavoriteOutlinedIcon color="secondary" />
         </Fab>
       )}
     </Card>

@@ -24,8 +24,16 @@ export const currentUser = createSlice({
   initialState,
   reducers: {
     setNikename: (state, action) => {
-      localStorage.setItem('currentUser', JSON.stringify({ ...state.currentUser, nikename: action.payload }))
       state.currentUser.nikename = action.payload
+      localStorage.setItem('currentUser', JSON.stringify({ ...state.currentUser }))
+    },
+    addToFavMovies: (state, action) => {
+      state.currentUser.favorites.push(action.payload)
+      localStorage.setItem('currentUser', JSON.stringify({ ...state.currentUser }))
+    },
+    removeFromFavMovies: (state, action) => {
+      state.currentUser.favorites = state.currentUser.favorites.filter(el => el !== action.payload)
+      localStorage.setItem('currentUser', JSON.stringify({ ...state.currentUser }))
     }
   },
   extraReducers: {
@@ -41,6 +49,6 @@ export const currentUser = createSlice({
   }
 })
 
-export const { setNikename } = currentUser.actions
+export const { setNikename, addToFavMovies, removeFromFavMovies } = currentUser.actions
 
 export default currentUser.reducer

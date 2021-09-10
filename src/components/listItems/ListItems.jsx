@@ -1,4 +1,5 @@
 import {
+  Box,
   Grid,
   makeStyles,
   // Typography
@@ -78,7 +79,7 @@ const ListItems = () => {
         >
           {listMovie
             ? listMovie.results?.map((el) => (
-                <Grid item key={el.id} xs={12} md={3}>
+                <Grid item key={el.id} xs={6} md={3}>
                   <Item data={el} />
                 </Grid>
               ))
