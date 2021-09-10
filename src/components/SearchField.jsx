@@ -62,9 +62,12 @@ const SearchField = () => {
   const { searchMovies, loading } = useSelector((state) => state.searchMovies);
   const { genres } = useSelector((state) => state.genres);
   const [showResponse, setShowResponse] = useState(false);
-  if (!genres) {
-    dispatch(fetchGenres());
-  }
+  useEffect(() => {
+    if (!genres) {
+      dispatch(fetchGenres());
+    }
+  }, []);
+  console.log(showResponse);
   return (
     <div>
       <InputSearch
@@ -78,9 +81,10 @@ const SearchField = () => {
           ) : (
             searchMovies.results?.map((el) => (
               <Link
-                to={MOVIE_PAGE + el.id}
+                to={MOVIE_PAGE + "/" + el.id}
                 style={{ textDecoration: "none" }}
                 key={el.id}
+                onClick={() => console.log("click")}
               >
                 <Box className={classes.response}>
                   <Typography variant="h6" className={classes.title}>

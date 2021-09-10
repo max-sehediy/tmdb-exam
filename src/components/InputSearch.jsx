@@ -7,13 +7,16 @@ const InputSearch = ({ setShowResponse }) => {
   const [value, setValue] = useState("");
 
   const handleSearch = (e) => {
+    setShowResponse(true);
     return setValue(e.target.value.toLowerCase());
   };
   const handleClick = () => {
     if (value) return setShowResponse(true);
   };
   const handleBlur = () => {
-    return setShowResponse(false);
+    setTimeout(() => {
+      setShowResponse(false);
+    }, 300);
   };
   useEffect(() => {
     if (value) return dispatch(fetchSearchMovies(value));
