@@ -2,35 +2,53 @@ import {
   Button,
   Card,
   CardActionArea,
-  CardActions,
   CardContent,
   CardMedia,
+  Fab,
   makeStyles,
   Typography,
 } from "@material-ui/core";
+import HighlightOffOutlinedIcon from "@material-ui/icons/HighlightOffOutlined";
+import FavoriteOutlinedIcon from "@material-ui/icons/FavoriteOutlined";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { imagePath } from "../../../http";
 import { MOVIE_PAGE } from "../../../utils/constans";
+import { addToFavMovies, removeFromFavMovies } from "../../../store/currentUser/currentUser";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: theme.spacing(1),
     height: "100%",
-    // margin: theme.spacing(2),
+    position: "relative",
   },
   img: {
-    // minHeight: 360,
-    objectFit: "contain",
   },
   rating: {
     color: theme.palette.warning.dark,
   },
+  favBtn: {
+    position: "absolute",
+    top: 3,
+    right: 3,
+  },
+  iconRemove:{
+    color:theme.palette.error.main
+  }
 }));
 
 const Item = ({ data }) => {
   const classes = useStyles();
   const history = useHistory();
+  const dispatch = useDispatch();
+  const { currentUser } = useSelector((state) => state.currentUser);
+console.log(currentUser.favorites)
+  const handleClickAdd = (id) => {
+    return dispatch(addToFavMovies(id));
+  };
+  const handleClickRemove = (id) => {
+    return dispatch(removeFromFavMovies(id));
+  };
 
   return (
     <Card className={classes.root}>
@@ -42,6 +60,7 @@ const Item = ({ data }) => {
           image={imagePath + data?.poster_path}
           title="Contemplative Reptile"
           className={classes.img}
+          onClick={() => history.push(MOVIE_PAGE + "/" + data.id)}
         />
         <CardContent>
           <Typography gutterBottom variant="body2" color="primary">
@@ -52,15 +71,28 @@ const Item = ({ data }) => {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions style={{ marginTop: "auto", marginBottom: 0 }}>
-        <Button
-          size="small"
-          color="primary"
-          onClick={() => history.push(MOVIE_PAGE + "/" + data.id)}
+      {currentUser.favorites.includes(data.id) ? (
+        <Fab
+          aria-label="like"
+          className={classes.favBtn}
+          onClick={() => handleClickRemove(data.id)}
+          // color="secondary"
+          size='small'
         >
-          Add to Favorite
-        </Button>
-      </CardActions>
+          <HighlightOffOutlinedIcon className={classes.iconRemove} />
+        </Fab>
+      ) : (
+        <Fab
+          aria-label="like"
+          className={classes.favBtn}
+          onClick={() => handleClickAdd(data.id)}
+          size='small'
+
+          // color="secondary"
+        >
+          <FavoriteOutlinedIcon color="secondary" />
+        </Fab>
+      )}
     </Card>
   );
 };

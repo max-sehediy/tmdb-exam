@@ -6,11 +6,11 @@ import { AppRouter } from "./components/AppRouter";
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: '#dfe6e9'
-
   }
 }))
 
 function App() {
+  
   const classes = useStyles()
   return (
     <BrowserRouter>

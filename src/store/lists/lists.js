@@ -29,7 +29,7 @@ export const fetchGenreMovies = createAsyncThunk(
 const initialState = {
   listMovie: null,
   loading: false,
-  err: ' ',
+  err: '',
   jsph: {}
 }
 export const listsSlice = createSlice({
