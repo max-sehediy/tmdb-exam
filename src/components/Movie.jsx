@@ -1,23 +1,29 @@
 import {
   Box,
   Container,
+  Fab,
   Grid,
   makeStyles,
   Typography,
 } from "@material-ui/core";
 import { FiberManualRecord } from "@material-ui/icons";
 import React from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import { imagePath } from "../http";
+import { addToFavMovies, removeFromFavMovies } from "../store/currentUser/currentUser";
 import { MOVIE_PAGE } from "../utils/constans";
+
+import HighlightOffOutlinedIcon from "@material-ui/icons/HighlightOffOutlined";
+import FavoriteOutlinedIcon from "@material-ui/icons/FavoriteOutlined";
+
+
 const useStyles = makeStyles((theme) => ({
   poster: {
     position: "relative",
     overflow: "hidden",
     padding: 0,
-    // [theme.breakpoints.dowm("md")]: {
-    //   overflow: "visible",
-    // },
   },
   customBackground: {
     backgroundImage:
@@ -70,14 +76,14 @@ const useStyles = makeStyles((theme) => ({
   altMoviesPost: {
     position: "relative",
     margin: theme.spacing(1),
-    cursor:'pointer',
+    cursor: "pointer",
     "&>img": {
       borderRadius: "10px",
       height: "150px",
     },
   },
   altMoviesFooter: {
-    cursor:'pointer',
+    cursor: "pointer",
     position: "absolute",
     color: "black",
     width: "90%",
@@ -93,12 +99,26 @@ const useStyles = makeStyles((theme) => ({
       textOverflow: "ellipsis",
     },
   },
+  favBtn: {
+    position: "absolute",
+    top: 3,
+    right: 3,
+  },
 }));
 
 const Movie = ({ movieItem, altMovies }) => {
   const classes = useStyles();
   const history = useHistory();
+  const dispatch = useDispatch();
+  const { currentUser } = useSelector((state) => state.currentUser);
   const year = new Date(movieItem?.release_date);
+
+  const handleClickAdd = (id) => {
+    return dispatch(addToFavMovies(id));
+  };
+  const handleClickRemove = (id) => {
+    return dispatch(removeFromFavMovies(id));
+  };
 
   return (
     <Container
@@ -197,6 +217,25 @@ const Movie = ({ movieItem, altMovies }) => {
           </Grid>
         </Grid>
       </Container>
+      {currentUser.favorites.includes(movieItem.id) ? (
+        <Fab
+          aria-label="like"
+          className={classes.favBtn}
+          onClick={() => handleClickRemove(movieItem.id)}
+          color="secondary"
+        >
+          <HighlightOffOutlinedIcon color="primary" />
+        </Fab>
+      ) : (
+        <Fab
+          aria-label="like"
+          className={classes.favBtn}
+          onClick={() => handleClickAdd(movieItem.id)}
+          color="secondary"
+        >
+          <FavoriteOutlinedIcon color="primary" />
+        </Fab>
+      )}
     </Container>
   );
 };
