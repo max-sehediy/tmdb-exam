@@ -15,14 +15,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { imagePath } from "../../../http";
 import { MOVIE_PAGE } from "../../../utils/constans";
-import { addToFavMovies, removeFromFavMovies } from "../../../store/currentUser/currentUser";
+import {
+  addToFavMovies,
+  removeFromFavMovies,
+} from "../../../store/currentUser/currentUser";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "100%",
     position: "relative",
+    // width: 250,
   },
   img: {
+    // objectFit: "contain",
   },
   rating: {
     color: theme.palette.warning.dark,
@@ -32,9 +37,9 @@ const useStyles = makeStyles((theme) => ({
     top: 3,
     right: 3,
   },
-  iconRemove:{
-    color:theme.palette.error.main
-  }
+  iconRemove: {
+    color: theme.palette.error.main,
+  },
 }));
 
 const Item = ({ data }) => {
@@ -42,7 +47,7 @@ const Item = ({ data }) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.currentUser);
-console.log(currentUser.favorites)
+  console.log(currentUser.favorites);
   const handleClickAdd = (id) => {
     return dispatch(addToFavMovies(id));
   };
@@ -77,7 +82,7 @@ console.log(currentUser.favorites)
           className={classes.favBtn}
           onClick={() => handleClickRemove(data.id)}
           // color="secondary"
-          size='small'
+          size="small"
         >
           <HighlightOffOutlinedIcon className={classes.iconRemove} />
         </Fab>
@@ -86,7 +91,7 @@ console.log(currentUser.favorites)
           aria-label="like"
           className={classes.favBtn}
           onClick={() => handleClickAdd(data.id)}
-          size='small'
+          size="small"
 
           // color="secondary"
         >
