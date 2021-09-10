@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
+import currentUserReducer from "./currentUser/currentUser";
 import genresReduser from "./genres/genres";
 import listsReducer from "./lists/lists";
 import movieReducer from "./movieItem/movieItem";
@@ -8,6 +9,7 @@ export const store = configureStore({
     movieItem: movieReducer,
     listMovie: listsReducer,
     searchMovies: searchReducer,
-    genres: genresReduser
+    genres: genresReduser,
+    currentUser: currentUserReducer,
   },
 })

@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import { useFetching } from "../../hooks/useFetching"
-import { $host } from "../../http/axios"
 
 export const fetchMovieById = createAsyncThunk(
   'movie/fetchMovieById',
@@ -16,6 +15,13 @@ export const fetchAlternativeMoviesById = createAsyncThunk(
     return data
   }
 )
+// export const fetchAlternativeMoviesById = createAsyncThunk(
+//   'movie/fetchAlternativeMovieById',
+//   async (movieId) => {
+//     const data = await useFetching('movie', 0, movieId, true)
+//     return data
+//   }
+// )
 
 const initialState = {
   movieItem: {

@@ -4,9 +4,10 @@ import {
   // Typography
 } from "@material-ui/core";
 import { Skeleton } from "@material-ui/lab";
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import useScrollPosition from "../../hooks/useScrollPosition";
 import { fetchGenreMovies, fetchPopularMovie } from "../../store/lists/lists";
 import Item from "./item/Item";
 
@@ -34,6 +35,8 @@ const ListItems = () => {
       dispatch(fetchGenreMovies(selectedGenres));
     }
   }, [selectedGenres]);
+  // const scrollPosition = useScrollPosition();
+  // console.log(scrollPosition)
   return (
     <div>
       {loading ? (

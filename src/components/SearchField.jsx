@@ -65,7 +65,6 @@ const SearchField = () => {
   if (!genres) {
     dispatch(fetchGenres());
   }
-  console.log(searchMovies);
   return (
     <div>
       <InputSearch

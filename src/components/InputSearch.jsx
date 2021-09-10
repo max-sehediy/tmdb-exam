@@ -4,12 +4,11 @@ import { fetchSearchMovies } from "../store/searchMovies/searchMovies";
 
 const InputSearch = ({ setShowResponse }) => {
   const dispatch = useDispatch();
-  const [value, setValue] = useState("star wars");
+  const [value, setValue] = useState("");
 
   const handleSearch = (e) => {
     return setValue(e.target.value.toLowerCase());
   };
-  console.log(value);
   const handleClick = () => {
     if (value) return setShowResponse(true);
   };
@@ -17,12 +16,12 @@ const InputSearch = ({ setShowResponse }) => {
     return setShowResponse(false);
   };
   useEffect(() => {
-    dispatch(fetchSearchMovies(value));
-  //! for correction  
+    if (value) return dispatch(fetchSearchMovies(value));
+    //! for change style
     // setTimeout(() => {
     //   setShowResponse(true);
     // }, 1500);
-  }, [value,dispatch]);
+  }, [value]);
   return (
     <div>
       <input

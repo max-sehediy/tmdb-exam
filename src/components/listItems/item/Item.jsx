@@ -2,13 +2,16 @@ import {
   Button,
   Card,
   CardActionArea,
-  CardActions,
   CardContent,
   CardMedia,
+  Fab,
   makeStyles,
   Typography,
 } from "@material-ui/core";
+import HighlightOffOutlinedIcon from "@material-ui/icons/HighlightOffOutlined";
+import FavoriteOutlinedIcon from "@material-ui/icons/FavoriteOutlined";
 import React from "react";
+import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { imagePath } from "../../../http";
 import { MOVIE_PAGE } from "../../../utils/constans";
@@ -17,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     padding: theme.spacing(1),
     height: "100%",
+    position: "relative",
     // margin: theme.spacing(2),
   },
   img: {
@@ -26,12 +30,20 @@ const useStyles = makeStyles((theme) => ({
   rating: {
     color: theme.palette.warning.dark,
   },
+  favBtn: {
+    position: "absolute",
+    top: 3,
+    right: 3,
+  },
 }));
 
 const Item = ({ data }) => {
   const classes = useStyles();
   const history = useHistory();
-
+  const { currentUser } = useSelector((state) => state.currentUser);
+  const handleClick = () => {
+    console.log(currentUser?.favorites);
+  };
   return (
     <Card className={classes.root}>
       <CardActionArea>
@@ -42,6 +54,7 @@ const Item = ({ data }) => {
           image={imagePath + data?.poster_path}
           title="Contemplative Reptile"
           className={classes.img}
+          onClick={() => history.push(MOVIE_PAGE + "/" + data.id)}
         />
         <CardContent>
           <Typography gutterBottom variant="body2" color="primary">
@@ -52,15 +65,25 @@ const Item = ({ data }) => {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions style={{ marginTop: "auto", marginBottom: 0 }}>
-        <Button
-          size="small"
-          color="primary"
-          onClick={() => history.push(MOVIE_PAGE + "/" + data.id)}
+      {currentUser.favorites.includes(data.id) ? (
+        <Fab
+          aria-label="like"
+          className={classes.favBtn}
+          onClick={handleClick}
+          color="secondary"
         >
-          Add to Favorite
-        </Button>
-      </CardActions>
+          <HighlightOffOutlinedIcon color="primary" />
+        </Fab>
+      ) : (
+        <Fab
+          aria-label="like"
+          className={classes.favBtn}
+          onClick={handleClick}
+          color="secondary"
+        >
+          <FavoriteOutlinedIcon color="primary" />
+        </Fab>
+      )}
     </Card>
   );
 };
