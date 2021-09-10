@@ -80,7 +80,6 @@ const Profile = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const [openModal, setOpenModal] = useState(false);
-  console.log(openModal);
   const { currentUser, fetchData, loading } = useSelector(
     (state) => state.currentUser
   );
@@ -89,7 +88,6 @@ const Profile = () => {
   };
   useEffect(() => {
     if (currentUser.favorites.length) {
-      console.log("effect");
       return dispatch(fetchFavMovies(currentUser.favorites));
     }
   }, []);

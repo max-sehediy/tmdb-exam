@@ -4,8 +4,8 @@ import { $host } from "../../http/axios"
 
 export const fetchPopularMovie = createAsyncThunk(
   'lists/fetchPopularMovie',
-  async () => {
-    const data = await useFetching()
+  async (page) => {
+    const data = await useFetching('movie', page)
     return data
   }
 )
@@ -27,7 +27,9 @@ export const fetchGenreMovies = createAsyncThunk(
   })
 
 const initialState = {
-  listMovie: null,
+  listMovie: [],
+  page: 1,
+  totalPage: 10,
   loading: false,
   err: '',
   jsph: {}
@@ -35,12 +37,16 @@ const initialState = {
 export const listsSlice = createSlice({
   name: 'lists',
   initialState,
-  reducers: {},
+  reducers: {
+    nextPage: (state) => { state.page += 1 }
+  },
   extraReducers: {
     //! popular list
     [fetchPopularMovie.pending]: (state) => { state.loading = true },
     [fetchPopularMovie.fulfilled]: (state, action) => {
-      state.listMovie = action.payload
+      state.listMovie = [...state.listMovie, ...action.payload.results]
+      // state.page = action.payload.page
+      state.totalPage = action.payload.total_pages
       state.loading = false
     },
     [fetchPopularMovie.rejected]: (state, action) => {
@@ -51,7 +57,7 @@ export const listsSlice = createSlice({
     [fetchGenreMovies.pending]: (state) => { state.loading = true },
     [fetchGenreMovies.fulfilled]: (state, action) => {
       state.loading = false
-      state.listMovie = action.payload
+      state.listMovie = action.payload.results
     },
     [fetchGenreMovies.rejected]: (state, action) => {
       state.loading = false
@@ -59,5 +65,5 @@ export const listsSlice = createSlice({
     }
   }
 })
-
+export const { nextPage } = listsSlice.actions
 export default listsSlice.reducer

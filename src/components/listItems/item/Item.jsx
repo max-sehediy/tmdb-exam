@@ -1,5 +1,4 @@
 import {
-  Button,
   Card,
   CardActionArea,
   CardContent,
@@ -47,7 +46,6 @@ const Item = ({ data }) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.currentUser);
-  console.log(currentUser.favorites);
   const handleClickAdd = (id) => {
     return dispatch(addToFavMovies(id));
   };

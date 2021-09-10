@@ -35,6 +35,3 @@ export const useFetching = async (
   return data
 }
 
-export const UseFetchingProfile = async (array) => {
-  
-}

@@ -8,6 +8,13 @@ const useStyles = makeStyles((theme) => ({
   chip: {
     margin: theme.spacing(1),
   },
+  chipWait: {
+    color: "white",
+    backgroundColor: theme.palette.info.main,
+  },
+  chipSelected: {
+    color: theme.palette.error.dark,
+  },
 }));
 
 const Genres = () => {
@@ -25,9 +32,6 @@ const Genres = () => {
   useEffect(() => {
     dispatch(fetchGenres());
 
-    return () => {
-      dispatch(fetchGenres());
-    };
     // eslint-disable-next-line
   }, []);
   if (loading) {
@@ -41,9 +45,10 @@ const Genres = () => {
             key={el.id}
             label={el.name}
             variant="outlined"
-            color="primary"
+            color="secondary"
             size="small"
             clickable
+            // className={[classes.chip, classes.chipSelected]}
             className={classes.chip}
             onDelete={() => handleRemove(el)}
           />
@@ -53,10 +58,11 @@ const Genres = () => {
           key={el.id}
           label={el.name}
           variant="outlined"
-          color="secondary"
+          color="primary"
           size="small"
           clickable
           className={classes.chip}
+          // className={[classes.chip, classes.chipWait]}
           onClick={() => handleAdd(el)}
         />
       ))}

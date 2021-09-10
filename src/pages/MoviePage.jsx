@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Movie from "../components/Movie";
 import {
   fetchAlternativeMoviesById,
@@ -22,13 +22,17 @@ const MoviePage = () => {
   }
   if (err.length || altErr.length) {
     return (
-      <div style={{padding:50}}>
+      <div style={{ padding: 50 }}>
         <h3>Error movie: {err}</h3>
-        {altErr ? <h3 style={{marginTop:20}}>Error alt movies: <strong style={{color:'red'}}>{altErr}</strong></h3> : null}
+        {altErr ? (
+          <h3 style={{ marginTop: 20 }}>
+            Error alt movies: <strong style={{ color: "red" }}>{altErr}</strong>
+          </h3>
+        ) : null}
       </div>
     );
   }
-  return <Movie movieItem={movieItem} altMovies={altMovies}  />;
+  return <Movie movieItem={movieItem} altMovies={altMovies} />;
 };
 
 export default MoviePage;

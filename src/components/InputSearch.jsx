@@ -17,10 +17,6 @@ const InputSearch = ({ setShowResponse }) => {
   };
   useEffect(() => {
     if (value) return dispatch(fetchSearchMovies(value));
-    //! for change style
-    // setTimeout(() => {
-    //   setShowResponse(true);
-    // }, 1500);
   }, [value]);
   return (
     <div>

@@ -1,15 +1,16 @@
 import {
-  Box,
   Grid,
   makeStyles,
-  // Typography
 } from "@material-ui/core";
 import { Skeleton } from "@material-ui/lab";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import useScrollPosition from "../../hooks/useScrollPosition";
-import { fetchGenreMovies, fetchPopularMovie } from "../../store/lists/lists";
+import {
+  fetchGenreMovies,
+  fetchPopularMovie,
+  nextPage,
+} from "../../store/lists/lists";
 import Item from "./item/Item";
 
 const useStyles = makeStyles((theme) => ({
@@ -26,18 +27,40 @@ const useStyles = makeStyles((theme) => ({
 const ListItems = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const { listMovie, loading } = useSelector((state) => state.listMovie);
-  const { genres, selectedGenres } = useSelector((state) => state.genres);
+  const [fetching, setFetching] = useState(true);
+  const { listMovie, loading, page, totalPage } = useSelector(
+    (state) => state.listMovie
+  );
+  const {  selectedGenres } = useSelector((state) => state.genres);
   useEffect(() => {
-    return dispatch(fetchPopularMovie());
+    document.addEventListener("scroll", scrollHandler);
+    return () => {
+      document.removeEventListener("scroll", scrollHandler);
+    };
   }, []);
+  const scrollHandler = (e) => {
+    if (
+      e.target.documentElement.scrollHeight -
+        (e.target.documentElement.scrollTop + window.innerHeight) <
+        100 &&
+      totalPage > page
+    ) {
+      setFetching(true);
+    }
+  };
+
+  useEffect(() => {
+    if (fetching) {
+      dispatch(fetchPopularMovie(page))
+        .then(() => dispatch(nextPage()))
+        .finally(() => setFetching(false));
+    }
+  }, [fetching]);
   useEffect(() => {
     if (selectedGenres.length) {
       dispatch(fetchGenreMovies(selectedGenres));
     }
   }, [selectedGenres]);
-  // const scrollPosition = useScrollPosition();
-  // console.log(scrollPosition)
   return (
     <div>
       {loading ? (
@@ -78,7 +101,7 @@ const ListItems = () => {
           className={classes.listMovie}
         >
           {listMovie
-            ? listMovie.results?.map((el) => (
+            ? listMovie.map((el) => (
                 <Grid item key={el.id} xs={6} md={3}>
                   <Item data={el} />
                 </Grid>
