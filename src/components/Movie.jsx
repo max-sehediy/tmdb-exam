@@ -108,8 +108,8 @@ const useStyles = makeStyles((theme) => ({
   },
   date: {},
   genres: {
-    marginRight: "4px",
     display: "flex",
+    alignItems: "center",
   },
   favBtn: {
     position: "absolute",

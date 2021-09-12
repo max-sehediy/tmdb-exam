@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   avatar: {
+    marginLeft:8,
     backgroundColor: deepOrange[500],
     cursor:'pointer'
   },
@@ -38,7 +39,7 @@ export default function ButtonAppBar() {
   const classes = useStyles();
   const history = useHistory();
   const { currentUser } = useSelector((state) => state.currentUser);
-
+  
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -51,7 +52,7 @@ export default function ButtonAppBar() {
             onClick={() => history.push(PROFILE_PAGE)}
             className={classes.avatar}
           >
-            {currentUser.nikename[0]}
+            {currentUser.nickname[0].toUpperCase()}
           </Avatar>
         </Toolbar>
       </AppBar>

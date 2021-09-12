@@ -13,7 +13,6 @@ export const fetchGenreMovies = createAsyncThunk(
   'lists/fetchGenreMovies',
   async (genre) => {
     let genres = genre.map(el => el.id).join(',')
-    // const data = await useFetching()
     const { data } = await $host.get('discover/movie',
       {
         params: {

@@ -1,7 +1,11 @@
-import React, { useEffect } from "react";
+import React, {
+  //  useEffect
+   } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Chip } from "@material-ui/core";
-import { fetchGenres, removeGenr, selectedGenr } from "../store/genres/genres";
+import { 
+  // fetchGenres,
+   removeGenr, selectedGenr } from "../store/genres/genres";
 import { makeStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -50,7 +54,7 @@ const Genres = () => {
             className={classes.chip}
             onDelete={() => handleRemove(el)}
           />
-        ))}
+        )).sort((a, b) => a.id - b.id)}
       {genres?.map((el) => (
         <Chip
           key={el.id}
@@ -63,7 +67,7 @@ const Genres = () => {
           // className={[classes.chip, classes.chipWait]}
           onClick={() => handleAdd(el)}
         />
-      ))}
+      )).sort((a, b) => a.id - b.id)}
     </div>
   );
 };

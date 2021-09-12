@@ -46,6 +46,7 @@ const Item = ({ data }) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.currentUser);
+  
   const handleClickAdd = (id) => {
     return dispatch(addToFavMovies(id));
   };

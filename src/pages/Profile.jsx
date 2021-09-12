@@ -104,13 +104,13 @@ const Profile = () => {
     <Box display="flex" flexDirection="column" className={classes.container}>
       <Grid container className={classes.header}>
         <Grid item sm={4}>
-          <div className={classes.avatar}>{currentUser.nikename[0]}</div>
+          <div className={classes.avatar}>{currentUser.nickname[0]}</div>
         </Grid>
         <Grid item sm={8}>
           <Box display="flex" flexDirection="column">
             <Typography variant="h4" color="primary">
               <span style={{ color: "white" }}>Hello</span>
-              {currentUser.nikename}
+              {currentUser.nickname}
             </Typography>
             <Typography variant="h4" color="error" className={classes.fav}>
               You liked:
@@ -169,10 +169,10 @@ const Profile = () => {
         variant="contained"
         color="secondary"
       >
-        Change nikename
+        Change nickname
       </Button>
       <FormDialog
-        nikename={currentUser.nikename}
+        nickname={currentUser.nickname}
         openModal={openModal}
         setOpenModal={setOpenModal}
       />

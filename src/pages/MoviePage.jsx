@@ -13,13 +13,16 @@ const MoviePage = () => {
   const dispatch = useDispatch();
   const { loading, altLoading, movieItem, altMovies, err, altErr } =
     useSelector((state) => state.movieItem);
+
   useEffect(() => {
     dispatch(fetchMovieById(id));
     dispatch(fetchAlternativeMoviesById(id));
   }, [id]);
+
   if (loading || altLoading) {
     return <h1>loading</h1>;
   }
+  
   if (err.length || altErr.length) {
     return (
       <div style={{ padding: 50 }}>

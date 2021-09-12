@@ -21,6 +21,7 @@ const InputSearch = ({ setShowResponse }) => {
   useEffect(() => {
     if (value) return dispatch(fetchSearchMovies(value));
   }, [value]);
+  
   return (
     <div>
       <input

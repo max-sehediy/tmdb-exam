@@ -11,15 +11,15 @@ import { setNikename } from '../../store/currentUser/currentUser';
 
 
 
-export default function FormDialog({ nikename, openModal, setOpenModal }) {
+export default function FormDialog({ nickname, openModal, setOpenModal }) {
   const dispatch = useDispatch()
-  const [newNikename, setNewNikename] = useState(nikename);
+  const [newNikename, setNewNikename] = useState(nickname);
 
   const handleClose = () => {
     setOpenModal(false);
   };
   const handleSuccess = () => {
-    if (nikename !== newNikename) {
+    if (nickname !== newNikename) {
       dispatch(setNikename(newNikename))
       setOpenModal(false);
     }
@@ -28,16 +28,16 @@ export default function FormDialog({ nikename, openModal, setOpenModal }) {
   return (
     <div>
       <Dialog open={openModal} onClose={handleClose} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">Chenge your nikename</DialogTitle>
+        <DialogTitle id="form-dialog-title">Change your nickname</DialogTitle>
         <DialogContent>
           <TextField
             autoFocus
             margin="dense"
             id="name"
-            label="New Nikename"
+            label="New Nickname"
             type="text"
             variant='outlined'
-            defaultValue={nikename}
+            defaultValue={nickname}
             onChange={(e) => setNewNikename(e.target.value)}
             fullWidth
           />

@@ -15,14 +15,6 @@ export const fetchAlternativeMoviesById = createAsyncThunk(
     return data
   }
 )
-// export const fetchAlternativeMoviesById = createAsyncThunk(
-//   'movie/fetchAlternativeMovieById',
-//   async (movieId) => {
-//     const data = await useFetching('movie', 0, movieId, true)
-//     return data
-//   }
-// )
-
 const initialState = {
   movieItem: {
     release_date: '',

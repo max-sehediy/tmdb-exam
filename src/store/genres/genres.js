@@ -25,10 +25,12 @@ export const genres = createSlice({
     selectedGenr: (state, action) => {
       state.selectedGenres.push(action.payload)
       state.genres = state.genres.filter(el => el.id !== action.payload.id)
+      state.selectedGenres.sort((a, b) => a.id - b.id)
     },
     removeGenr: (state, action) => {
       state.selectedGenres = state.selectedGenres.filter(el => el.id !== action.payload.id)
       state.genres.push(action.payload)
+      state.genres.sort((a, b) => a.id - b.id)
     },
   },
   extraReducers: {

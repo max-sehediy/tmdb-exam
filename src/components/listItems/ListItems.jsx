@@ -1,7 +1,4 @@
-import {
-  Grid,
-  makeStyles,
-} from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
 import { Skeleton } from "@material-ui/lab";
 import React, { useState } from "react";
 import { useEffect } from "react";
@@ -31,13 +28,7 @@ const ListItems = () => {
   const { listMovie, loading, page, totalPage } = useSelector(
     (state) => state.listMovie
   );
-  const {  selectedGenres } = useSelector((state) => state.genres);
-  useEffect(() => {
-    document.addEventListener("scroll", scrollHandler);
-    return () => {
-      document.removeEventListener("scroll", scrollHandler);
-    };
-  }, []);
+  const { selectedGenres } = useSelector((state) => state.genres);
   const scrollHandler = (e) => {
     if (
       e.target.documentElement.scrollHeight -
@@ -48,6 +39,12 @@ const ListItems = () => {
       setFetching(true);
     }
   };
+  useEffect(() => {
+    document.addEventListener("scroll", scrollHandler);
+    return () => {
+      document.removeEventListener("scroll", scrollHandler);
+    };
+  }, []);
 
   useEffect(() => {
     if (fetching) {

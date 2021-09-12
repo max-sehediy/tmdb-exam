@@ -15,8 +15,15 @@ const useStyle = makeStyles((theme) => ({
     top: 64,
     left: 0,
     color: "#000",
-    backgroundColor: "#fafafa",
+    // backgroundColor: "#fafafa",
     zIndex: 50,
+    [theme.breakpoints.down("sm")]: {
+      top: 56,
+    },
+    "&>a": {
+      textDecoration: "none",
+      color: "black",
+    },
   },
   response: {
     display: "flex",
@@ -35,6 +42,11 @@ const useStyle = makeStyles((theme) => ({
     [theme.breakpoints.down("md")]: {
       display: "flex",
       flexDirection: "column",
+    },
+    "&>a:hover": {
+      textDecoration: "none",
+      // background:'linear-gradient(#e66465, #9198e5)',
+      background: "black",
     },
   },
   title: {

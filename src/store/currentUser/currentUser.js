@@ -14,7 +14,7 @@ export const fetchFavMovies = createAsyncThunk(
 )
 
 const initialState = {
-  currentUser: JSON.parse(localStorage.getItem('currentUser')) || { nikename: 'anonym', favorites: [482373, 566525] },
+  currentUser: JSON.parse(localStorage.getItem('currentUser')) || { nickname: 'anonym', favorites: [482373, 566525] },
   fetchData: [],
   loading: false,
   err: '',
@@ -24,7 +24,7 @@ export const currentUser = createSlice({
   initialState,
   reducers: {
     setNikename: (state, action) => {
-      state.currentUser.nikename = action.payload
+      state.currentUser.nickname = action.payload
       localStorage.setItem('currentUser', JSON.stringify({ ...state.currentUser }))
     },
     addToFavMovies: (state, action) => {
