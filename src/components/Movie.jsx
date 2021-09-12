@@ -12,12 +12,14 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import { imagePath } from "../http";
-import { addToFavMovies, removeFromFavMovies } from "../store/currentUser/currentUser";
+import {
+  addToFavMovies,
+  removeFromFavMovies,
+} from "../store/currentUser/currentUser";
 import { MOVIE_PAGE } from "../utils/constans";
 
 import HighlightOffOutlinedIcon from "@material-ui/icons/HighlightOffOutlined";
 import FavoriteOutlinedIcon from "@material-ui/icons/FavoriteOutlined";
-
 
 const useStyles = makeStyles((theme) => ({
   poster: {
@@ -99,6 +101,16 @@ const useStyles = makeStyles((theme) => ({
       textOverflow: "ellipsis",
     },
   },
+  dateGenre: {
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+    },
+  },
+  date: {},
+  genres: {
+    marginRight: "4px",
+    display: "flex",
+  },
   favBtn: {
     position: "absolute",
     top: 3,
@@ -145,30 +157,31 @@ const Movie = ({ movieItem, altMovies }) => {
               <Typography variant="h6" className={classes.title}>
                 {movieItem.title} ({year.getFullYear()})
               </Typography>
-              <Box display="flex" alignItems="center">
+              <Box
+                display="flex"
+                alignItems="center"
+                className={classes.dateGenre}
+              >
                 {movieItem.adult ? (
                   <Typography variant="span" className={classes.adult}>
                     18+
                   </Typography>
                 ) : null}
-                <Typography variant="body1" style={{}}>
+                <Typography variant="body1" className={classes.date}>
                   {year.getDay()} / {year.getMonth() + 1} / {year.getFullYear()}
                 </Typography>
-                <FiberManualRecord
-                  style={{ fontSize: "14px", margin: "0 4px" }}
-                />
-                {movieItem.genres.map((el, index) => (
-                  <Typography
-                    variant="body2"
-                    key={el.id}
-                    style={{ marginRight: "4px" }}
-                    data={index}
-                  >
-                    {el.name}
-                    {index === movieItem.genres.length - 1 ? null : ", "}
-                  </Typography>
-                ))}
-                <FiberManualRecord style={{ fontSize: "14px" }} />
+                <div className={classes.genres}>
+                  <FiberManualRecord
+                    style={{ fontSize: "14px", margin: "0 4px" }}
+                  />
+                  {movieItem.genres.map((el, index) => (
+                    <Typography variant="body2" key={el.id} data={index}>
+                      {el.name}
+                      {index === movieItem.genres.length - 1 ? null : ", "}
+                    </Typography>
+                  ))}
+                  <FiberManualRecord style={{ fontSize: "14px" }} />
+                </div>
               </Box>
               <Typography variant="body2" className={classes.tagline}>
                 {movieItem?.tagline}

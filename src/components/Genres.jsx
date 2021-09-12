@@ -29,18 +29,16 @@ const Genres = () => {
   const handleRemove = (genre) => {
     dispatch(removeGenr(genre));
   };
-  useEffect(() => {
-    dispatch(fetchGenres());
-
-    // eslint-disable-next-line
-  }, []);
+  // useEffect(() => {
+  //   if (!genres.length) dispatch(fetchGenres());
+  // }, []);
   if (loading) {
     return <div>Loading...</div>;
   }
   return (
     <div>
       {selectedGenres &&
-        selectedGenres?.map((el) => (
+        selectedGenres.map((el) => (
           <Chip
             key={el.id}
             label={el.name}

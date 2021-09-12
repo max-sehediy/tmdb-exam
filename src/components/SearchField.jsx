@@ -63,11 +63,10 @@ const SearchField = () => {
   const { genres } = useSelector((state) => state.genres);
   const [showResponse, setShowResponse] = useState(false);
   useEffect(() => {
-    if (!genres) {
+    if (!genres.length) {
       dispatch(fetchGenres());
     }
   }, []);
-  console.log(showResponse);
   return (
     <div>
       <InputSearch
